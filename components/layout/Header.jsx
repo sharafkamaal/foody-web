@@ -1,121 +1,118 @@
 import { useState } from "react";
-import { FaUserAlt, FaShoppingCart, FaSearch } from "react-icons/fa";
-import Logo from "../ui/Logo";
-import Search from "../ui/Search";
 import { GiHamburgerMenu, GiCancel } from "react-icons/gi";
-import { useRouter } from "next/router";
 import Link from "next/link";
-import { useSelector } from "react-redux";
 
 const Header = () => {
-  const [isSearchModal, setIsSearchModal] = useState(false);
-  const [isMenuModal, setIsMenuModal] = useState(false);
-  const cart = useSelector((state) => state.cart);
-
-  const router = useRouter();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div
-      className={`h-[5.5rem] z-50 relative w-full ${
-        router.asPath === "/" ? "bg-transparent fixed" : "bg-secondary"
-      }`}
-    >
-      <div className="container mx-auto text-white flex justify-between items-center h-full">
-        <Logo />
-        <nav
-          className={`sm:static absolute top-0 left-0 sm:w-auto sm:h-auto w-full h-screen sm:text-white text-black sm:bg-transparent bg-white sm:flex hidden z-50 ${
-            isMenuModal === true && "!grid place-content-center"
-          }`}
-        >
-          <ul className="flex gap-x-2 sm:flex-row flex-col items-center">
-            <li
-              className={`px-[5px] py-[10px] uppercase hover:text-primary cursor-pointer ${
-                router.asPath === "/" && "text-primary"
-              }}`}
-              onClick={() => setIsMenuModal(false)}
+    <header className="w-full">
+      {/* 🔴 Top Red Bar */}
+      <div className="bg-[#ea1228] flex flex-col sm:flex-row items-center justify-between px-4 sm:px-8 py-2 gap-2 sm:gap-0 text-center sm:text-left">
+        <span className="text-white font-semibold text-sm sm:text-base">
+          info@shahshalalfood.co.uk
+        </span>
+
+        {/* Social Icons */}
+        <div className="flex gap-2 items-center justify-center sm:justify-end">
+          {/* Instagram */}
+          <a href="#" aria-label="Instagram">
+            <svg
+              className="w-4 h-2 fill-white hover:opacity-80 transition"
+              viewBox="0 0 24 24"
             >
-              <Link href="/">Home</Link>
-            </li>
-            <li
-              className={`px-[5px] py-[10px] uppercase hover:text-primary cursor-pointer ${
-                router.asPath === "/menu" && "text-primary"
-              }`}
-              onClick={() => setIsMenuModal(false)}
-            >
-              <Link href="/menu">Menu</Link>
-            </li>
-            <li
-              className={`px-[5px] py-[10px] uppercase hover:text-primary cursor-pointer ${
-                router.asPath === "/about" && "text-primary"
-              }`}
-              onClick={() => setIsMenuModal(false)}
-            >
-              <Link href="/about">About</Link>
-            </li>
-            <li
-              className={`px-[5px] py-[10px] uppercase hover:text-primary cursor-pointer ${
-                router.asPath === "/reservation" && "text-primary"
-              }`}
-              onClick={() => setIsMenuModal(false)}
-            >
-              <Link href="/reservation">Book Table</Link>
-            </li>
-          </ul>
-          {isMenuModal && (
-            <button
-              className="absolute  top-4 right-4 z-50"
-              onClick={() => setIsMenuModal(false)}
-            >
-              <GiCancel size={25} className=" transition-all" />
-            </button>
-          )}
-        </nav>
-        <div className="flex gap-x-4 items-center">
-          <Link href="/auth/login">
-            <span>
-              {router.asPath.includes("auth") ? (
-                <i
-                  className={`fa-solid fa-right-to-bracket ${
-                    router.asPath.includes("login") && "text-primary"
-                  } `}
-                ></i>
-              ) : (
-                <FaUserAlt
-                  className={`hover:text-primary transition-all cursor-pointer ${
-                    (router.asPath.includes("auth") ||
-                      router.asPath.includes("profile")) &&
-                    "text-primary"
-                  }`}
-                />
-              )}
-            </span>
-          </Link>
-          <Link href="/cart">
-            <span className="relative">
-              <FaShoppingCart
-                className={`hover:text-primary transition-all cursor-pointer`}
-              />
-              <span className="w-4 h-4 text-xs grid place-content-center rounded-full bg-primary absolute -top-2 -right-3 text-black font-bold">
-                {cart.products.length === 0 ? "0" : cart.products.length}
-              </span>
-            </span>
-          </Link>
-          <button onClick={() => setIsSearchModal(true)}>
-            <FaSearch className="hover:text-primary transition-all cursor-pointer" />
-          </button>
-          <a href="#" className="md:inline-block hidden sm">
-            <button className="btn-primary">Order Online</button>
+              <path d="M16.98 2.99... (Instagram SVG path here)" />
+            </svg>
           </a>
-          <button
-            className="sm:hidden inline-block"
-            onClick={() => setIsMenuModal(true)}
-          >
-            <GiHamburgerMenu className="text-xl hover:text-primary transition-all" />
-          </button>
+          {/* TikTok */}
+          <a href="#" aria-label="TikTok">
+            <svg
+              className="w-5 h-5 fill-white hover:opacity-80 transition"
+              viewBox="0 0 24 24"
+            >
+              <path d="M20.5 3.5... (TikTok SVG path here)" />
+            </svg>
+          </a>
         </div>
       </div>
-      {isSearchModal && <Search setIsSearchModal={setIsSearchModal} />}
-    </div>
+
+      {/* 🔵 Main Navigation */}
+      <div className="bg-[#0a1522] flex items-center justify-between px-4 sm:px-8 h-20 relative">
+        {/* Logo */}
+        <div className="bg-[#ea1228] rounded-xl flex items-center px-3 py-1 sm:px-4 sm:py-2">
+          <img src="/logo.png" alt="Logo" className="h-10 sm:h-14" />
+        </div>
+
+        {/* Hamburger Menu (visible on mobile) */}
+        <button
+          onClick={() => setMenuOpen(!menuOpen)}
+          className="text-white text-2xl sm:hidden focus:outline-none"
+        >
+          {menuOpen ? <GiCancel /> : <GiHamburgerMenu />}
+        </button>
+
+        {/* Nav Links (hidden on mobile) */}
+        <nav
+          className={`absolute sm:static top-full left-0 w-full sm:w-auto bg-[#0a1522] sm:bg-transparent transition-all duration-300 ${
+            menuOpen
+              ? "max-h-80 opacity-100 visible"
+              : "max-h-0 opacity-0 invisible sm:visible sm:opacity-100 sm:max-h-none"
+          } overflow-hidden sm:overflow-visible`}
+        >
+          <ul className="flex flex-col sm:flex-row gap-4 sm:gap-6 text-white font-semibold text-base sm:text-lg items-center py-2 sm:py-0">
+            <li>
+              <Link href="/about">
+                <span className="hover:text-[#ea1228] transition cursor-pointer">
+                  ABOUT US
+                </span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/menu">
+                <span className="hover:text-[#ea1228] transition cursor-pointer">
+                  OUR MENU
+                </span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/locations">
+                <span className="hover:text-[#ea1228] transition cursor-pointer">
+                  OUR LOCATIONS
+                </span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/franchise">
+                <span className="hover:text-[#ea1228] transition cursor-pointer">
+                  FRANCHISE
+                </span>
+              </Link>
+            </li>
+
+            {/* Locations Button (visible on mobile inside menu) */}
+            <li className="block sm:hidden">
+              <Link href="/locations">
+                <button className="bg-[#ea1228] text-white px-4 py-2 rounded-lg font-bold text-base hover:bg-[#c11123] transition">
+                  OUR LOCATIONS
+                </button>
+              </Link>
+            </li>
+          </ul>
+        </nav>
+
+        {/* OUR LOCATIONS Button (visible only on desktop) */}
+        <div className="hidden sm:block">
+          <Link href="/locations">
+            <button className="bg-[#ea1228] text-white px-8 py-3 rounded-lg font-bold text-base flex items-center gap-2 hover:bg-[#c11123] transition">
+              OUR LOCATIONS
+              <svg className="w-4 h-4 fill-white" viewBox="0 0 24 24">
+                <path d="M10 17l5-5-5-5v10z" />
+              </svg>
+            </button>
+          </Link>
+        </div>
+      </div>
+    </header>
   );
 };
 

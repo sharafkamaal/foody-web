@@ -1,4 +1,3 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
@@ -6,27 +5,16 @@ module.exports = {
   ],
   theme: {
     extend: {
-      container: {
-        screens: {
-          xs: "375px",
-          sm: "640px",
-          md: "768px",
-          lg: "1024px",
-          xl: "1140px",
-          "2xl": "1140px",
-        },
-      },
       colors: {
-        primary: "#ffbe33",
-        secondary: "#222831",
-        danger: "#ff0000",
-        success: "#00ff00",
+        primary: '#ea1228',    // Red color from design
+        secondary: '#0a1522',  // Dark navy color
+        accent: '#c11123',     // Darker red for hover
       },
       fontFamily: {
-        dancing: ["Dancing Script", "cursive"],
-        sans: ["Open Sans", "sans-serif"],
+        sans: ['Roboto', 'sans-serif'],
+        heading: ['Roboto', 'sans-serif'],
       },
     },
   },
   plugins: [],
-};
+}
