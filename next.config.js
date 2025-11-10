@@ -1,13 +1,12 @@
-# Create the file with the correct content
-echo '/** @type {import("next").NextConfig} */
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
   eslint: {
     ignoreDuringBuilds: true,
   },
   images: {
-    domains: ["res.cloudinary.com"],
+    domains: ['res.cloudinary.com'],
   },
 }
 
-module.exports = nextConfig' > next.config.js
+module.exports = nextConfig
