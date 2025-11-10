@@ -10,7 +10,7 @@ export default function Franchise() {
   return (
     <>
       <Head>
-        <title>Franchise Opportunities - Shah's Halal Food UK</title>
+        <title>Franchise Opportunities - Shah&apos;s Halal Food UK</title>
       </Head>
 
       {/* Hero Section */}
@@ -19,7 +19,7 @@ export default function Franchise() {
           {/* Title */}
           <div className="text-center mb-8 sm:mb-10">
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0a1522] mb-2">
-              SHAH'S HALAL OFFERING
+              SHAH&apos;S HALAL OFFERING
             </h1>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0a1522]">
               FRANCHISE OPPORTUNITIES NATIONWIDE
@@ -83,7 +83,7 @@ export default function Franchise() {
                 </div>
               </div>
               <div className="text-[#0a1522] text-base sm:text-lg font-semibold">
-                I'm a Member
+                I&apos;m a Member
               </div>
             </div>
 

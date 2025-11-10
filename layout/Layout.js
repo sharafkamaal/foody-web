@@ -1,7 +1,7 @@
 // components/layout/Layout.jsx
 import Head from "next/head";
-import Header from "../components/layout/Header";
-import Footer from "../components/layout/Footer";
+import Header from "./Header";  // ← FIXED: Same folder
+import Footer from "./Footer";  // ← FIXED: Same folder
 
 export default function Layout({ children, title = "Shah's Halal Food UK" }) {
   return (

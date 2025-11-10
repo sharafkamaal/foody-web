@@ -88,7 +88,7 @@ export default function Footer() {
             <div className="mb-6">
               <Image 
                 src="/logo.png" 
-                alt="Shah's Halal Food UK" 
+                alt="Shah&apos;s Halal Food UK" 
                 width={160} 
                 height={102}
                 className="h-auto w-32 sm:w-36 md:w-40"
@@ -162,7 +162,7 @@ export default function Footer() {
         {/* Copyright - Bottom */}
         <div className="mt-8 pt-4 border-t border-gray-700 text-center">
           <p className="text-sm text-gray-400">
-            Copyright © 2025 Shah's Halal UK
+            Copyright © 2025 Shah&apos;s Halal UK
           </p>
         </div>
       </div>

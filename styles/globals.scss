@@ -10,26 +10,23 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: "Dancing Script", cursive;
+  font-family: sans-serif;
   color: #222;
 }
+
 
 * {
   box-sizing: border-box;
 }
 
 .btn-primary {
-  @apply text-white px-[30px] py-[8px] rounded-3xl bg-primary cursor-pointer hover:opacity-70 transition-all disabled:opacity-40 disabled:cursor-not-allowed;
-
-  &:disabled {
-    background-color: #dc2626 !important;
-  }
+  @apply text-white px-[30px] py-[8px] rounded-3xl bg-primary cursor-pointer hover:opacity-70 transition-all disabled:opacity-40 disabled:!bg-red-600 disabled:cursor-not-allowed;
 }
 
 .slick-dots {
   display: flex !important;
-  justify-content: flex-start !important;
-  width: 100% !important;
+  justify-content: flex-start;
+  width: 100%;
 }
 
 .slick-dots .slick-active div {

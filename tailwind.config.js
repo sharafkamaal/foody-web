@@ -2,13 +2,14 @@ module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
+    "./app/**/*.{js,ts,jsx,tsx}",  // ADD THIS LINE
   ],
   theme: {
     extend: {
       colors: {
-        primary: '#ea1228',    // Red color from design
-        secondary: '#0a1522',  // Dark navy color
-        accent: '#c11123',     // Darker red for hover
+        primary: '#ea1228',
+        secondary: '#0a1522',
+        accent: '#c11123',
       },
       fontFamily: {
         sans: ['Roboto', 'sans-serif'],

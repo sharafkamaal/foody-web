@@ -1,115 +1,282 @@
-// pages/menu.jsx
 import { useState } from "react";
-import Layout from "../components/layout/Layout";
-import axios from "axios";
 
-export default function Menu({ categories, products }) {
-  const [activeCategory, setActiveCategory] = useState("all");
+const categories = [
+  { key: "platters", name: "Platters" },
+  { key: "gyros", name: "Gyros" },
+  { key: "salads", name: "Salads" },
+  { key: "philly", name: "Philly Sandwiches" },
+  { key: "extras", name: "Extras" },
+  { key: "drinks", name: "Drinks" },
+];
 
-  const filteredProducts = activeCategory === "all" 
-    ? products 
-    : products.filter(p => p.category === activeCategory);
+const categoryImages = {
+  platters: "/images/categories/platter.jpg",
+  gyros: "/images/categories/gyro.jpg",
+  salads: "/images/categories/salad.jpg",
+  philly: "/images/categories/sandwich.jpg",
+  extras: "/images/categories/extras.jpg",
+  drinks: "/images/categories/drinks.jpg"
+};
+
+const menuItems = {
+  platters: [
+    {
+      id: 1,
+      name: "Chicken Over Rice",
+      price: "$8.99",
+      desc: 'A delicious meal of juicy chicken marinated with finest herbs and spices grilled to perfection served over our signature aromatic extra-long grain basmati rice, salad.',
+      img: "/images/chicken-over-rice.jpg",
+    },
+    {
+      id: 2,
+      name: "Lamb Over Rice",
+      price: "$8.99",
+      desc: 'Delicious meal of ground lamb marinated with finest herbs and spices grilled to perfection served over our signature aromatic basmati rice, salad.',
+      img: "/images/lamb-over-rice.jpg",
+    },
+    {
+      id: 3,
+      name: "Chicken & Lamb Mix Over Rice",
+      price: "$8.99",
+      desc: 'Delicious meal of juicy chicken and ground lamb marinated, grilled to perfection and served over our signature aromatic basmati rice and salad.',
+      img: "/images/chicken-lamb-mix.jpg",
+    },
+    {
+      id: 4,
+      name: "Falafel Over Rice",
+      price: "$6.99",
+      desc: 'Delicious meal of crispy falafel patties marinated with finest herbs and spices, grilled to perfection and served over our signature aromatic basmati rice and salad.',
+      img: "/images/falafel-over-rice.jpg",
+    },
+  ],
+  gyros: [
+    {
+      id: 5,
+      name: "Chicken Gyro",
+      price: "$7.99",
+      desc: 'Juicy chicken marinated with the finest herbs and spices, grilled to perfection and served over 8" pita with salad and white sauce.',
+      img: "/images/chicken-gyro.jpg",
+    },
+    {
+      id: 6,
+      name: "Lamb Gyro",
+      price: "$7.99",
+      desc: 'Ground lamb marinated with the finest herbs and spices, grilled to perfection, over 8" pita with salad and white sauce.',
+      img: "/images/lamb-gyro.jpg",
+    },
+    {
+      id: 7,
+      name: "Chicken & Lamb Mix Gyro",
+      price: "$7.99",
+      desc: 'Juicy chicken and ground lamb marinated with the finest herbs and spices, grilled to perfection over 8" pita with salad and white sauce.',
+      img: "/images/chicken-lamb-mix-gyro.jpg",
+    },
+    {
+      id: 8,
+      name: "Falafel on Pita",
+      price: "$6.99",
+      desc: 'Fresh crispy falafel wrapped and served over 8" pita with salad and white sauce.',
+      img: "/images/falafel-pita.jpg",
+    },
+  ],
+  salads: [
+    {
+      id: 9,
+      name: "Chicken Salad",
+      price: "$8.99",
+      desc: 'Juicy chicken marinated with finest herbs and spices grilled to perfection served over fresh salad greens with flavorful dressing.',
+      img: "/images/chicken-salad.jpg",
+    },
+    {
+      id: 10,
+      name: "Lamb Salad",
+      price: "$8.99",
+      desc: 'Ground lamb marinated with finest herbs and spices grilled to perfection served over fresh salad greens with flavorful dressing.',
+      img: "/images/lamb-salad.jpg",
+    },
+    {
+      id: 11,
+      name: "Chicken & Lamb Mix Salad",
+      price: "$8.99",
+      desc: 'Juicy chicken and Ground lamb marinated, grilled to perfection served over fresh salad greens with flavorful dressing.',
+      img: "/images/chicken-lamb-mix-salad.jpg",
+    },
+    {
+      id: 12,
+      name: "Falafel Over Salad",
+      price: "$6.99",
+      desc: 'Fresh crispy falafel served over fresh salad greens with flavorful dressing.',
+      img: "/images/falafel-over-salad.jpg",
+    },
+  ],
+  philly: [
+    {
+      id: 13,
+      name: "Philly Cheese Steak",
+      price: "$6.99",
+      desc: 'Classic Philly sandwich with seasoned beef marinated with herbs and spices, grilled with onion and pepper to perfection, melted Cheese, lettuce, tomatoes and cucumber in a toasted 8" Philly bread with dressing.',
+      img: "/images/philly-cheese-steak.jpg",
+    },
+    {
+      id: 14,
+      name: "Chicken Philly",
+      price: "$6.99",
+      desc: 'Juicy chicken marinated with herbs and spices, grilled with onion and pepper to perfection, lettuce, tomatoes and cucumber in a toasted 8" Philly bread with dressing.',
+      img: "/images/chicken-philly.jpg",
+    },
+    {
+      id: 15,
+      name: "Lamb Philly",
+      price: "$6.99",
+      desc: 'Ground lamb marinated with herbs and spices, grilled with onion and pepper to perfection, lettuce, tomatoes and cucumber in toasted 8" Philly bread with dressing.',
+      img: "/images/lamb-philly.jpg",
+    },
+    {
+      id: 16,
+      name: "Chicken & Lamb Mix Philly",
+      price: "$6.99",
+      desc: 'Juicy chicken and ground lamb marinated, grilled with onion and pepper to perfection, lettuce, tomatoes and cucumber in a toasted 8" Philly bread with dressing.',
+      img: "/images/chicken-lamb-mix-philly.jpg",
+    },
+  ],
+  extras: [
+    { id: 17, name: "Meat", price: "$3", desc: "Extra portion of your choice of meat", img: "/images/meat.jpg" },
+    { id: 18, name: "Rice", price: "$2", desc: "Extra aromatic basmati rice", img: "/images/rice.jpg" },
+    { id: 19, name: "Pita", price: "$1 each", desc: 'Fresh 8" pita bread', img: "/images/pita.jpg" },
+    { id: 20, name: "Falafel", price: "$1 each", desc: "Crispy falafel patty", img: "/images/falafel.jpg" },
+    { id: 21, name: "Cheese", price: "$1", desc: "Melted cheese", img: "/images/cheese.jpg" },
+    { id: 22, name: "White Sauce", price: "$1", desc: "Signature Royal White Sauce", img: "/images/white-sauce.jpg" },
+    { id: 23, name: "Red Spicy Sauce", price: "50¢", desc: "Spicy Red Sauce", img: "/images/red-sauce.jpg" },
+  ],
+  drinks: [
+    { id: 24, name: "Soda 330ml can", price: "$1", desc: "Refreshing soda", img: "/images/soda.jpg" },
+    { id: 25, name: "Water 500ml bottle", price: "$1", desc: "Pure bottled water", img: "/images/water.jpg" },
+  ],
+};
+
+export default function Menu() {
+  const [active, setActive] = useState("platters");
 
   return (
-    <Layout title="Our Menu - Shah's Halal Food UK">
-      {/* Page Header */}
-      <section className="bg-gradient-to-br from-[#0a1522] to-[#1a2532] py-12 sm:py-16 lg:py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white text-center">
+    <section className="py-16 sm:py-20 lg:py-24 bg-white">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+
+        {/* Menu Title */}
+        <div className="text-center mb-10 sm:mb-12">
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#0a1522] mb-4">
             Our Menu
-          </h1>
+          </h2>
+          <p className="text-gray-600 text-sm sm:text-base max-w-3xl mx-auto">
+            All dishes are made with aromatic extra-long grain basmati rice and served with our signature Royal White Sauce and spicy Red Sauce
+          </p>
         </div>
-      </section>
 
-      {/* Menu Section */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Sidebar + Content Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-10">
           
-          {/* Category Filter */}
-          <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-8 sm:mb-12">
-            <button
-              onClick={() => setActiveCategory("all")}
-              className={`px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold text-sm sm:text-base transition ${
-                activeCategory === "all"
-                  ? "bg-[#ea1228] text-white"
-                  : "bg-white text-[#0a1522] hover:bg-gray-100"
-              }`}
-            >
-              All Items
-            </button>
-            {categories.map((category) => (
-              <button
-                key={category._id}
-                onClick={() => setActiveCategory(category.title)}
-                className={`px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold text-sm sm:text-base transition ${
-                  activeCategory === category.title
-                    ? "bg-[#ea1228] text-white"
-                    : "bg-white text-[#0a1522] hover:bg-gray-100"
-                }`}
-              >
-                {category.title}
-              </button>
-            ))}
+          {/* LEFT SIDEBAR - Category Menu */}
+          <div className="lg:col-span-1">
+            <div className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden sticky top-24">
+              <div className="p-4">
+                {categories.map((category) => (
+                  <button
+                    key={category.key}
+                    onClick={() => setActive(category.key)}
+                    className={`w-full flex items-center gap-4 p-3 mb-2 rounded-lg transition-all duration-300 relative ${
+                      active === category.key
+                        ? "bg-gray-50"
+                        : "hover:bg-gray-50"
+                    }`}
+                  >
+                    {/* Red Active Indicator */}
+                    {active === category.key && (
+                      <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#ea1228] rounded-r-full"></div>
+                    )}
+                    
+                    {/* Category Image */}
+                    <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 bg-gray-100">
+                      <img
+                        src={categoryImages[category.key]}
+                        alt={category.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    
+                    {/* Category Name */}
+                    <span className={`text-left font-semibold text-base ${
+                      active === category.key
+                        ? "text-[#ea1228]"
+                        : "text-gray-700"
+                    }`}>
+                      {category.name}
+                    </span>
+                  </button>
+                ))}
+              </div>
+            </div>
           </div>
 
-          {/* Products Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8">
-            {filteredProducts.map((product) => (
-              <div 
-                key={product._id} 
-                className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden group"
-              >
-                <div className="aspect-square relative overflow-hidden bg-gray-100">
-                  {product.img && (
-                    <img
-                      src={product.img}
-                      alt={product.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                    />
-                  )}
-                </div>
-                <div className="p-4 sm:p-6">
-                  <h3 className="font-bold text-lg sm:text-xl mb-2 text-[#0a1522]">
-                    {product.title}
-                  </h3>
-                  <p className="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4 line-clamp-2">
-                    {product.desc}
-                  </p>
-                  <div className="flex items-center justify-between">
-                    <span className="text-[#ea1228] font-bold text-lg sm:text-xl">
-                      £{product.prices?.[0]}
-                    </span>
-                    <button className="bg-[#ea1228] text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-[#c11123] transition">
-                      Order Now
-                    </button>
+          {/* RIGHT CONTENT - Menu Items */}
+          <div className="lg:col-span-3">
+            <div className="bg-gray-50 rounded-xl p-6 sm:p-8 lg:p-10 shadow-lg">
+              <h3 className="text-[#ea1228] text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 uppercase tracking-wide border-b-2 border-[#ea1228] pb-4">
+                {categories.find(c => c.key === active)?.name}
+              </h3>
+
+              <div className="space-y-6">
+                {menuItems[active]?.map((item) => (
+                  <div 
+                    key={item.id} 
+                    className="bg-white rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 border border-gray-200"
+                  >
+                    <div className="flex flex-col sm:flex-row gap-6">
+                      {/* Product Image */}
+                      <div className="w-full sm:w-48 h-48 flex-shrink-0 overflow-hidden bg-gray-100">
+                        <img
+                          src={item.img}
+                          alt={item.name}
+                          className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                        />
+                      </div>
+
+                      {/* Product Details */}
+                      <div className="flex-1 p-5 sm:p-6 flex flex-col justify-between">
+                        <div>
+                          <h4 className="text-[#0a1522] font-bold text-lg sm:text-xl mb-2">
+                            {item.name}
+                          </h4>
+                          <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+                            {item.desc}
+                          </p>
+                        </div>
+                        
+                        <div className="flex justify-between items-center mt-4 pt-4 border-t border-gray-200">
+                          <span className="text-[#ea1228] font-bold text-2xl">
+                            {item.price}
+                          </span>
+                          <button className="bg-[#ea1228] text-white px-6 py-2.5 rounded-lg text-sm font-semibold hover:bg-[#c11123] transition-all duration-300 shadow-md hover:shadow-lg">
+                            Add to Order
+                          </button>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </div>
+                ))}
               </div>
-            ))}
+
+              {/* View Full Menu Button */}
+              <div className="mt-8 pt-6 border-t border-gray-300 text-center">
+                <a
+                  href="/full-menu"
+                  className="inline-block bg-[#ea1228] text-white px-10 py-4 rounded-lg font-bold text-base sm:text-lg uppercase tracking-wide hover:bg-[#c11123] transition-all duration-300 shadow-lg hover:shadow-xl"
+                >
+                  VIEW FULL MENU
+                </a>
+              </div>
+            </div>
           </div>
         </div>
-      </section>
-    </Layout>
+      </div>
+    </section>
   );
 }
-
-export const getServerSideProps = async () => {
-  try {
-    const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/categories`);
-    const product = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/products`);
-    
-    return {
-      props: {
-        categories: res.data || [],
-        products: product.data || [],
-      },
-    };
-  } catch (error) {
-    return {
-      props: {
-        categories: [],
-        products: [],
-      },
-    };
-  }
-};

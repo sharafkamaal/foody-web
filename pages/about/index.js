@@ -1,17 +1,8 @@
-// pages/about.jsx
-import Layout from "../components/layout/Layout";
-
+// pages/about/index.js
 export default function About() {
   return (
-    <Layout title="About Us - Shah's Halal Food UK">
-      {/* Page Header */}
-      <section className="bg-gradient-to-br from-[#0a1522] to-[#1a2532] py-12 sm:py-16 lg:py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white text-center">
-            About Us
-          </h1>
-        </div>
-      </section>
+    <>
+      
 
       {/* Content Section */}
       <section className="py-12 sm:py-16 lg:py-20 bg-white">
@@ -19,7 +10,7 @@ export default function About() {
           <div className="max-w-4xl mx-auto">
             <div className="prose prose-lg max-w-none">
               <p className="text-base sm:text-lg text-gray-700 mb-6 leading-relaxed">
-                Shah's Halal Food UK is your ultimate destination for authentic and flavourful halal cuisine. 
+                Shah&apos;s Halal Food UK is your ultimate destination for authentic and flavourful halal cuisine. 
                 Here, every bite is a celebration of rich spices, fresh ingredients, and culinary passion.
               </p>
               
@@ -56,6 +47,6 @@ export default function About() {
           </div>
         </div>
       </section>
-    </Layout>
+    </>
   );
 }
