@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Image from "next/image";
 
 const categories = [
   { key: "platters", name: "Platters" },
@@ -195,9 +196,11 @@ export default function Menu() {
                     
                     {/* Category Image */}
                     <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 bg-gray-100">
-                      <img
+                      <Image
                         src={categoryImages[category.key]}
                         alt={category.name}
+                        width={64}
+                        height={64}
                         className="w-full h-full object-cover"
                       />
                     </div>
@@ -232,9 +235,11 @@ export default function Menu() {
                     <div className="flex flex-col sm:flex-row gap-6">
                       {/* Product Image */}
                       <div className="w-full sm:w-48 h-48 flex-shrink-0 overflow-hidden bg-gray-100">
-                        <img
+                        <Image
                           src={item.img}
                           alt={item.name}
+                          width={192}
+                          height={192}
                           className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
                         />
                       </div>

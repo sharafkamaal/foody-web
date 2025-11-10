@@ -1,5 +1,6 @@
 // components/FranchiseSection.jsx
 import { useState } from "react";
+import Image from "next/image";
 
 export default function FranchiseSection() {
     const [showCertificate1, setShowCertificate1] = useState(false);
@@ -49,9 +50,11 @@ export default function FranchiseSection() {
                             <div className="flex justify-center items-center mb-2 sm:mb-3">
                                 <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full bg-[#f7f7f7] flex items-center justify-center overflow-hidden shadow-md">
                                     <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 flex items-center justify-center p-1">
-                                        <img
+                                        <Image
                                             src="/images/thumbs/halal.png"
                                             alt="Authentic Halal Food"
+                                            width={48}
+                                            height={48}
                                             className="w-full h-full object-contain"
                                         />
                                     </div>
@@ -66,9 +69,11 @@ export default function FranchiseSection() {
                         <div className="bg-white border-2 border-gray-200 rounded-lg p-4 sm:p-6 md:p-8 text-center hover:shadow-xl transition-all duration-300 flex flex-col items-center justify-center">
                             <div className="flex justify-center items-center mb-2 sm:mb-3">
                                 <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 flex items-center justify-center">
-                                    <img
+                                    <Image
                                         src="/images/thumbs/ncass-logo.png"
                                         alt="NCASS Member"
+                                        width={80}
+                                        height={80}
                                         className="w-full h-full object-contain"
                                     />
                                 </div>

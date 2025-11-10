@@ -20,14 +20,14 @@ export default function Header() {
         />
         <div className="relative h-full container mx-auto px-4 flex justify-between items-center">
           <a 
-            href="mailto:info@shahshalalfood.co.uk" 
+            href="mailto:info@kamaalshalalfood.co.uk" 
             className="text-white text-sm font-medium hover:text-primary transition-colors duration-300"
           >
-            info@shahshalalfood.co.uk
+            info@kamaalshalalfood.co.uk
           </a>
           <div className="flex gap-4">
             <a 
-              href="https://instagram.com/shahshalalfooduk" 
+              href="https://instagram.com/kamaalshalalfooduk" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="text-white hover:text-primary transition-colors duration-300 transform hover:scale-110"
@@ -37,7 +37,7 @@ export default function Header() {
               </svg>
             </a>
             <a 
-              href="https://tiktok.com/@shahshalalfooduk" 
+              href="https://tiktok.com/@kamaalshalalfooduk" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="text-white hover:text-primary transition-colors duration-300 transform hover:scale-110"
@@ -72,7 +72,7 @@ export default function Header() {
                 </svg>
               </div>
               <div className="text-white leading-tight">
-                <div className="text-2xl font-bold italic">SHAH&apos;S</div>
+                <div className="text-2xl font-bold italic">kamaal&apos;S</div>
                 <div className="text-[8px] tracking-[2px] uppercase font-semibold -mt-1">HALAL FOOD</div>
               </div>
             </div>

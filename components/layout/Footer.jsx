@@ -96,9 +96,9 @@ export default function Footer() {
               />
             </div>
             <p className="text-sm leading-relaxed text-gray-300 max-w-lg">
-              Shah's Halal Food UK – your ultimate destination for authentic and flavourful halal cuisine. 
-              Here, every bite is a celebration of rich spices, fresh ingredients, and culinary passion. From 
-              our sizzling platters to our savoury wraps, we craft each dish with care and tradition. Join us 
+              Shah&apos;s Halal Food UK – your ultimate destination for authentic and flavourful halal cuisine.
+              Here, every bite is a celebration of rich spices, fresh ingredients, and culinary passion. From
+              our sizzling platters to our savoury wraps, we craft each dish with care and tradition. Join us
               for a mouthwatering journey, where every meal tells a story of quality and taste
             </p>
           </div>

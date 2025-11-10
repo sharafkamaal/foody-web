@@ -165,12 +165,11 @@ export default function Index({ categoryList, productList }) {
             <p className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 text-gray-300">
               Authentic halal cuisine crafted with passion and tradition
             </p>
-            <Link href="/menu">
-              <a
-                className="inline-block bg-[#ea1228] text-white px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-lg font-bold text-base sm:text-lg hover:bg-[#c11123] transition"
-              >
-                View Our Menu
-              </a>
+            <Link
+              href="/menu"
+              className="inline-block bg-[#ea1228] text-white px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-lg font-bold text-base sm:text-lg hover:bg-[#c11123] transition"
+            >
+              View Our Menu
             </Link>
           </div>
         </div>
@@ -308,12 +307,11 @@ export default function Index({ categoryList, productList }) {
 
             {/* View All Button */}
             <div className="mt-8 pt-6 border-t border-gray-600 text-center">
-              <Link href="/menu">
-                <a
-                  className="inline-block bg-[#ea1228] text-white px-10 py-4 rounded-lg font-bold text-base sm:text-lg uppercase tracking-wide hover:bg-[#c11123] transition-all duration-300 shadow-lg hover:shadow-xl"
-                >
-                  VIEW FULL MENU
-                </a>
+              <Link
+                href="/menu"
+                className="inline-block bg-[#ea1228] text-white px-10 py-4 rounded-lg font-bold text-base sm:text-lg uppercase tracking-wide hover:bg-[#c11123] transition-all duration-300 shadow-lg hover:shadow-xl"
+              >
+                VIEW FULL MENU
               </Link>
             </div>
           </div>
