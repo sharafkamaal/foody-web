@@ -88,7 +88,7 @@ export default function Footer() {
             <div className="mb-6">
               <Image 
                 src="/logo.png" 
-                alt="Shah&apos;s Halal Food UK" 
+                alt="kamaal&apos;s Halal Food UK" 
                 width={160} 
                 height={102}
                 className="h-auto w-32 sm:w-36 md:w-40"
@@ -96,7 +96,7 @@ export default function Footer() {
               />
             </div>
             <p className="text-sm leading-relaxed text-gray-300 max-w-lg">
-              Shah&apos;s Halal Food UK – your ultimate destination for authentic and flavourful halal cuisine.
+              kamaal&apos;s Halal Food UK – your ultimate destination for authentic and flavourful halal cuisine.
               Here, every bite is a celebration of rich spices, fresh ingredients, and culinary passion. From
               our sizzling platters to our savoury wraps, we craft each dish with care and tradition. Join us
               for a mouthwatering journey, where every meal tells a story of quality and taste
@@ -112,7 +112,7 @@ export default function Footer() {
               </h3>
               <div className="flex gap-3">
                 <a 
-                  href="https://www.instagram.com/shahshalalfooduk" 
+                  href="https://www.instagram.com/kamaalshalalfooduk" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="w-12 h-12 rounded-full bg-[#ea1228] flex items-center justify-center hover:bg-[#c11123] hover:scale-105 transition-all duration-300 shadow-lg"
@@ -123,7 +123,7 @@ export default function Footer() {
                   </svg>
                 </a>
                 <a 
-                  href="https://www.tiktok.com/@shahshalalfooduk" 
+                  href="https://www.tiktok.com/@kamaalshalalfooduk" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="w-12 h-12 rounded-full bg-[#ea1228] flex items-center justify-center hover:bg-[#c11123] hover:scale-105 transition-all duration-300 shadow-lg"
@@ -148,10 +148,10 @@ export default function Footer() {
                 </p>
                 <p>
                   <a 
-                    href="mailto:info@shahshalalfood.co.uk"
+                    href="mailto:info@kamaalshalalfood.co.uk"
                     className="hover:text-[#ea1228] transition-colors duration-200"
                   >
-                    info@shahshalalfood.co.uk
+                    info@kamaalshalalfood.co.uk
                   </a>
                 </p>
               </div>
@@ -162,7 +162,7 @@ export default function Footer() {
         {/* Copyright - Bottom */}
         <div className="mt-8 pt-4 border-t border-gray-700 text-center">
           <p className="text-sm text-gray-400">
-            Copyright © 2025 Shah&apos;s Halal UK
+            Copyright © 2025 kamaal&apos;s Halal UK
           </p>
         </div>
       </div>

@@ -15,7 +15,7 @@ export default function FranchiseSection() {
                     {/* Title - Compact & Responsive */}
                     <div className="text-center mb-6 sm:mb-8 md:mb-10">
                         <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#0a1522] mb-2 leading-tight tracking-tight px-2">
-                            SHAH&apos;S HALAL OFFERING
+                            kamaal&apos;S HALAL OFFERING
                         </h2>
                         <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#0a1522] leading-tight tracking-tight px-2">
                             FRANCHISE OPPORTUNITIES NATIONWIDE
