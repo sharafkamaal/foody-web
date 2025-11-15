@@ -1,6 +1,15 @@
 import { useState } from "react";
 import Image from "next/image";
 
+const categories = [
+  { key: "platters", name: "Platters" },
+  { key: "gyros", name: "Gyros" },
+  { key: "salads", name: "Salads" },
+  { key: "philly", name: "Philly Sandwiches" },
+  { key: "extras", name: "Extras" },
+  { key: "drinks", name: "Drinks" },
+];
+
 const categoryImages = {
   platters: { jpg: "/images/categories/platter.jpg", png: "/images/categories/platter.png" },
   gyros: { jpg: "/images/categories/gyro.jpg", png: "/images/categories/gyro.png" },
@@ -26,6 +35,7 @@ import Image from "next/image";
   width={200}
   height={200}
 />
+
 
 
 const menuItems = {

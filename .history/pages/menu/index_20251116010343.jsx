@@ -1,31 +1,23 @@
 import { useState } from "react";
 import Image from "next/image";
 
+const categories = [
+  { key: "platters", name: "Platters" },
+  { key: "gyros", name: "Gyros" },
+  { key: "salads", name: "Salads" },
+  { key: "philly", name: "Philly Sandwiches" },
+  { key: "extras", name: "Extras" },
+  { key: "drinks", name: "Drinks" },
+];
+
 const categoryImages = {
   platters: { jpg: "/images/categories/platter.jpg", png: "/images/categories/platter.png" },
   gyros: { jpg: "/images/categories/gyro.jpg", png: "/images/categories/gyro.png" },
   salads: { jpg: "/images/categories/salad.jpg", png: "/images/categories/salad.png" },
   philly: { jpg: "/images/categories/sandwich.jpg", png: "/images/categories/sandwich.png" },
-  extras: { jpg: "/images/categories/extras.jpg", png: "/images/categories/extras.png" },
-  drinks: { jpg: "/images/categories/drinks.jpg", png: "/images/categories/drinks.png" },
+  extras: { jpg: "/images/categories/extras.jpg", png: "/images/extras.png" },
+  drinks: { jpg: "/images/categories/drinks.jpg", png: "/images/drinks.png" },
 };
-
-// Function to pick the existing image type
-function getCategoryImage(category: keyof typeof categoryImages, type: "jpg" | "png" = "jpg") {
-  const imageObj = categoryImages[category];
-  if (!imageObj) return "/images/categories/default.png"; // fallback
-  return imageObj[type] || imageObj.jpg; // pick jpg if type not available
-}
-
-// Usage in JSX
-import Image from "next/image";
-
-<Image
-  src={getCategoryImage("platters", "png")} // specify jpg or png
-  alt="Platters"
-  width={200}
-  height={200}
-/>
 
 
 const menuItems = {
