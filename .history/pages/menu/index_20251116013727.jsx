@@ -6,7 +6,7 @@ const categoryImages = {
   platters: { jpg: "/images/categories/platters.jpg", png: "/images/categories/platters.png" },
   gyros: { jpg: "/images/categories/gyros.jpg", png: "/images/categories/gyros.png" },
   salads: { jpg: "/images/categories/Salads.jpg", png: "/images/categories/Salads.png" },
-  philly: { jpg: "/images/categories/sandwiches.jpg", png: "/images/categories/sandwiches.png" },
+  philly: { jpg: "/images/categories/sandwiches.jpg", png: "/images/categories/sandwich.png" },
   extras: { jpg: "/images/categories/extras.jpg", png: "/images/categories/extras.png" },
   drinks: { jpg: "/images/categories/drinks.jpg", png: "/images/categories/drinks.png" },
 };
@@ -14,14 +14,10 @@ const categoryImages = {
 // Pick available image type for sidebar category
 function getCategoryImage(category, type = "jpg") {
   const imageObj = categoryImages[category];
-  if (!imageObj) return "/images/categories/default.png";
-
-  // Use png first if that's what actually exists!
-  if (type === "png" && imageObj.png) return imageObj.png;
-  if (type === "jpg" && imageObj.jpg) return imageObj.jpg;
-  // fallback to whichever is available
-  return imageObj.png || imageObj.jpg;
+  if (!imageObj) return "/images/categories/default.png"; // fallback
+  return imageObj[type] || imageObj.jpg; // fall back to jpg if type isn't available
 }
+
 // Sidebar menu categories
 const categories = [
   { key: "platters", name: "Platters" },

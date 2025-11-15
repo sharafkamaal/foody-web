@@ -193,8 +193,8 @@ export default function Menu() {
                     key={category.key}
                     onClick={() => setActive(category.key)}
                     className={`w-full flex items-center gap-4 p-3 mb-2 rounded-lg transition-all duration-300 relative ${active === category.key
-                        ? "bg-gray-50"
-                        : "hover:bg-gray-50"
+                      ? "bg-gray-50"
+                      : "hover:bg-gray-50"
                       }`}
                   >
                     {active === category.key && (
@@ -211,8 +211,8 @@ export default function Menu() {
                     </div>
                     <span
                       className={`text-left font-semibold text-base ${active === category.key
-                          ? "text-[#ea1228]"
-                          : "text-gray-700"
+                        ? "text-[#ea1228]"
+                        : "text-gray-700"
                         }`}
                     >
                       {category.name}

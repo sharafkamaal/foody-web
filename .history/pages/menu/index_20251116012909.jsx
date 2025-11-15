@@ -4,9 +4,9 @@ import Image from "next/image";
 // Use both jpg/png for categories
 const categoryImages = {
   platters: { jpg: "/images/categories/platters.jpg", png: "/images/categories/platters.png" },
-  gyros: { jpg: "/images/categories/gyros.jpg", png: "/images/categories/gyros.png" },
-  salads: { jpg: "/images/categories/Salads.jpg", png: "/images/categories/Salads.png" },
-  philly: { jpg: "/images/categories/sandwiches.jpg", png: "/images/categories/sandwiches.png" },
+  gyros: { jpg: "/images/categories/gyro.jpg", png: "/images/categories/gyro.png" },
+  salads: { jpg: "/images/categories/salad.jpg", png: "/images/categories/salad.png" },
+  philly: { jpg: "/images/categories/sandwich.jpg", png: "/images/categories/sandwich.png" },
   extras: { jpg: "/images/categories/extras.jpg", png: "/images/categories/extras.png" },
   drinks: { jpg: "/images/categories/drinks.jpg", png: "/images/categories/drinks.png" },
 };
@@ -14,14 +14,10 @@ const categoryImages = {
 // Pick available image type for sidebar category
 function getCategoryImage(category, type = "jpg") {
   const imageObj = categoryImages[category];
-  if (!imageObj) return "/images/categories/default.png";
-
-  // Use png first if that's what actually exists!
-  if (type === "png" && imageObj.png) return imageObj.png;
-  if (type === "jpg" && imageObj.jpg) return imageObj.jpg;
-  // fallback to whichever is available
-  return imageObj.png || imageObj.jpg;
+  if (!imageObj) return "/images/categories/default.png"; // fallback
+  return imageObj[type] || imageObj.jpg; // fall back to jpg if type isn't available
 }
+
 // Sidebar menu categories
 const categories = [
   { key: "platters", name: "Platters" },
@@ -192,10 +188,11 @@ export default function Menu() {
                   <button
                     key={category.key}
                     onClick={() => setActive(category.key)}
-                    className={`w-full flex items-center gap-4 p-3 mb-2 rounded-lg transition-all duration-300 relative ${active === category.key
+                    className={`w-full flex items-center gap-4 p-3 mb-2 rounded-lg transition-all duration-300 relative ${
+                      active === category.key
                         ? "bg-gray-50"
                         : "hover:bg-gray-50"
-                      }`}
+                    }`}
                   >
                     {active === category.key && (
                       <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#ea1228] rounded-r-full"></div>
@@ -210,10 +207,11 @@ export default function Menu() {
                       />
                     </div>
                     <span
-                      className={`text-left font-semibold text-base ${active === category.key
+                      className={`text-left font-semibold text-base ${
+                        active === category.key
                           ? "text-[#ea1228]"
                           : "text-gray-700"
-                        }`}
+                      }`}
                     >
                       {category.name}
                     </span>
