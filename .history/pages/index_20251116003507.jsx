@@ -119,7 +119,7 @@ export default function Index({ categoryList, productList }) {
         price: 6.99,
         desc: "Classic Philly sandwich with seasoned beef marinated with finest herbs and spices grilled with onion and pepper to perfection, melted Cheese, mixed with lettuce, Tomatoes and Cucumber in a toasted 8\" Philly bread with flavorful dressing.",
         category: "Sandwiches",
-        image: "/images/sandwiches/philly-cheese-steak.jpg",
+        image: "/images/sandwiches/philly-cheese-steak.png",
       },
       {
         id: 14,
@@ -127,7 +127,7 @@ export default function Index({ categoryList, productList }) {
         price: 6.99,
         desc: "Juicy chicken marinated with finest herbs and spices grilled with Onion and pepper to perfection, mixed with lettuce, Tomatoes and Cucumber, in a toasted 8\" Philly bread with flavorful dressing.",
         category: "Sandwiches",
-        image: "/images/sandwiches/chicken-philly.jpg",
+        image: "/images/sandwiches/chicken-philly.png",
       },
       {
         id: 15,
@@ -147,7 +147,7 @@ export default function Index({ categoryList, productList }) {
       },
     ],
     "Extras": [
-      { id: 17, title: "Meat", price: 3.0, desc: "Extra portion of your choice of meat", category: "Extras", image: "/images/extras/meat.jpg" },
+      { id: 17, title: "Meat", price: 3.0, desc: "Extra portion of your choice of meat", category: "Extras", image: "/images/extras/meat.png" },
       { id: 18, title: "Rice", price: 2.0, desc: "Extra aromatic basmati rice", category: "Extras", image: "/images/extras/rice.png" },
       { id: 19, title: "Pita", price: 1.0, desc: "Fresh 8\" pita bread", category: "Extras", image: "/images/extras/pita.png" },
       { id: 20, title: "Falafel", price: 1.0, desc: "Crispy falafel patty", category: "Extras", image: "/images/extras/falafel.png" },

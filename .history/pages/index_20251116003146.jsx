@@ -148,16 +148,16 @@ export default function Index({ categoryList, productList }) {
     ],
     "Extras": [
       { id: 17, title: "Meat", price: 3.0, desc: "Extra portion of your choice of meat", category: "Extras", image: "/images/extras/meat.jpg" },
-      { id: 18, title: "Rice", price: 2.0, desc: "Extra aromatic basmati rice", category: "Extras", image: "/images/extras/rice.png" },
-      { id: 19, title: "Pita", price: 1.0, desc: "Fresh 8\" pita bread", category: "Extras", image: "/images/extras/pita.png" },
-      { id: 20, title: "Falafel", price: 1.0, desc: "Crispy falafel patty", category: "Extras", image: "/images/extras/falafel.png" },
-      { id: 21, title: "Cheese", price: 1.0, desc: "Melted cheese", category: "Extras", image: "/images/extras/cheese.png" },
-      { id: 22, title: "White Sauce", price: 1.0, desc: "Signature Royal White Sauce", category: "Extras", image: "/images/extras/white-sauce.png" },
-      { id: 23, title: "Red Spicy Sauce", price: 0.5, desc: "Spicy Red Sauce", category: "Extras", image: "/images/extras/red-spicy-sauce.png" },
+      { id: 18, title: "Rice", price: 2.0, desc: "Extra aromatic basmati rice", category: "Extras", image: "/images/extras/rice.jpg" },
+      { id: 19, title: "Pita", price: 1.0, desc: "Fresh 8\" pita bread", category: "Extras", image: "/images/extras/pita.jpg" },
+      { id: 20, title: "Falafel", price: 1.0, desc: "Crispy falafel patty", category: "Extras", image: "/images/extras/falafel.jpg" },
+      { id: 21, title: "Cheese", price: 1.0, desc: "Melted cheese", category: "Extras", image: "/images/extras/cheese.jpg" },
+      { id: 22, title: "White Sauce", price: 1.0, desc: "Signature Royal White Sauce", category: "Extras", image: "/images/extras/white-sauce.jpg" },
+      { id: 23, title: "Red Spicy Sauce", price: 0.5, desc: "Spicy Red Sauce", category: "Extras", image: "/images/extras/red-spicy-sauce.jpg" },
     ],
     "Drinks": [
-      { id: 24, title: "Soda Can (330ml)", price: 1.0, desc: "Refreshing soda", category: "Drinks", image: "/images/drinks/soda-can.png" },
-      { id: 25, title: "Water Bottle (500ml)", price: 1.0, desc: "Pure bottled water", category: "Drinks", image: "/images/drinks/water-bottle.png" },
+      { id: 24, title: "Soda Can (330ml)", price: 1.0, desc: "Refreshing soda", category: "Drinks", image: "/images/drinks/soda-can.jpg" },
+      { id: 25, title: "Water Bottle (500ml)", price: 1.0, desc: "Pure bottled water", category: "Drinks", image: "/images/drinks/water-bottle.jpg" },
     ],
   };
 

@@ -67,7 +67,7 @@ export default function Index({ categoryList, productList }) {
         price: 7.99,
         desc: "Juicy chicken and ground lamb marinated with finest herbs and spices, grilled to perfection over 8\" pita with salad and white sauce.",
         category: "Gyros",
-        image: "/images/gyros/chicken-lamb-mix-gyro.png",
+        image: "/images/gyros/chicken-lamb-mix-gyro.jpg",
       },
       {
         id: 8,
@@ -75,7 +75,7 @@ export default function Index({ categoryList, productList }) {
         price: 6.99,
         desc: "Fresh Crispy falafel wrapped and served over 8\" pita with salad and white sauce.",
         category: "Gyros",
-        image: "/images/gyros/falafel-on-pita.png",
+        image: "/images/gyros/falafel-on-pita.jpg",
       },
     ],
     "Salads": [
@@ -85,7 +85,7 @@ export default function Index({ categoryList, productList }) {
         price: 8.99,
         desc: "Juicy chicken marinated with finest herbs and spices grilled to perfection served over fresh salad greens with flavorful dressing.",
         category: "Salads",
-        image: "/images/salads/chicken-salad.png",
+        image: "/images/salads/chicken-salad.jpg",
       },
       {
         id: 10,
@@ -93,7 +93,7 @@ export default function Index({ categoryList, productList }) {
         price: 8.99,
         desc: "Ground lamb marinated with finest herbs and spices grilled to perfection served over fresh salad greens with flavorful dressing.",
         category: "Salads",
-        image: "/images/salads/lamb-salad.png",
+        image: "/images/salads/lamb-salad.jpg",
       },
       {
         id: 11,
@@ -135,7 +135,7 @@ export default function Index({ categoryList, productList }) {
         price: 6.99,
         desc: "Ground lamb marinated with finest herbs and spices grilled with Onion and pepper to perfection, mixed with lettuce, Tomatoes and Cucumber, in a toasted 8\" Philly bread with flavorful dressing.",
         category: "Sandwiches",
-        image: "/images/sandwiches/lamb-philly.png",
+        image: "/images/sandwiches/lamb-philly.jpg",
       },
       {
         id: 16,
@@ -143,21 +143,21 @@ export default function Index({ categoryList, productList }) {
         price: 6.99,
         desc: "Juicy chicken and ground lamb marinated with finest herbs and spices, grilled with Onion and pepper to perfection, mixed with lettuce, Tomatoes and Cucumber, in a toasted 8\" Philly bread with flavorful dressing.",
         category: "Sandwiches",
-        image: "/images/sandwiches/chicken-lamb-mix-philly.png",
+        image: "/images/sandwiches/chicken-lamb-mix-philly.jpg",
       },
     ],
     "Extras": [
       { id: 17, title: "Meat", price: 3.0, desc: "Extra portion of your choice of meat", category: "Extras", image: "/images/extras/meat.jpg" },
-      { id: 18, title: "Rice", price: 2.0, desc: "Extra aromatic basmati rice", category: "Extras", image: "/images/extras/rice.png" },
-      { id: 19, title: "Pita", price: 1.0, desc: "Fresh 8\" pita bread", category: "Extras", image: "/images/extras/pita.png" },
-      { id: 20, title: "Falafel", price: 1.0, desc: "Crispy falafel patty", category: "Extras", image: "/images/extras/falafel.png" },
-      { id: 21, title: "Cheese", price: 1.0, desc: "Melted cheese", category: "Extras", image: "/images/extras/cheese.png" },
-      { id: 22, title: "White Sauce", price: 1.0, desc: "Signature Royal White Sauce", category: "Extras", image: "/images/extras/white-sauce.png" },
-      { id: 23, title: "Red Spicy Sauce", price: 0.5, desc: "Spicy Red Sauce", category: "Extras", image: "/images/extras/red-spicy-sauce.png" },
+      { id: 18, title: "Rice", price: 2.0, desc: "Extra aromatic basmati rice", category: "Extras", image: "/images/extras/rice.jpg" },
+      { id: 19, title: "Pita", price: 1.0, desc: "Fresh 8\" pita bread", category: "Extras", image: "/images/extras/pita.jpg" },
+      { id: 20, title: "Falafel", price: 1.0, desc: "Crispy falafel patty", category: "Extras", image: "/images/extras/falafel.jpg" },
+      { id: 21, title: "Cheese", price: 1.0, desc: "Melted cheese", category: "Extras", image: "/images/extras/cheese.jpg" },
+      { id: 22, title: "White Sauce", price: 1.0, desc: "Signature Royal White Sauce", category: "Extras", image: "/images/extras/white-sauce.jpg" },
+      { id: 23, title: "Red Spicy Sauce", price: 0.5, desc: "Spicy Red Sauce", category: "Extras", image: "/images/extras/red-spicy-sauce.jpg" },
     ],
     "Drinks": [
-      { id: 24, title: "Soda Can (330ml)", price: 1.0, desc: "Refreshing soda", category: "Drinks", image: "/images/drinks/soda-can.png" },
-      { id: 25, title: "Water Bottle (500ml)", price: 1.0, desc: "Pure bottled water", category: "Drinks", image: "/images/drinks/water-bottle.png" },
+      { id: 24, title: "Soda Can (330ml)", price: 1.0, desc: "Refreshing soda", category: "Drinks", image: "/images/drinks/soda-can.jpg" },
+      { id: 25, title: "Water Bottle (500ml)", price: 1.0, desc: "Pure bottled water", category: "Drinks", image: "/images/drinks/water-bottle.jpg" },
     ],
   };
 

@@ -147,7 +147,7 @@ export default function Index({ categoryList, productList }) {
       },
     ],
     "Extras": [
-      { id: 17, title: "Meat", price: 3.0, desc: "Extra portion of your choice of meat", category: "Extras", image: "/images/extras/meat.jpg" },
+      { id: 17, title: "Meat", price: 3.0, desc: "Extra portion of your choice of meat", category: "Extras", image: "/images/extras/meat.png" },
       { id: 18, title: "Rice", price: 2.0, desc: "Extra aromatic basmati rice", category: "Extras", image: "/images/extras/rice.png" },
       { id: 19, title: "Pita", price: 1.0, desc: "Fresh 8\" pita bread", category: "Extras", image: "/images/extras/pita.png" },
       { id: 20, title: "Falafel", price: 1.0, desc: "Crispy falafel patty", category: "Extras", image: "/images/extras/falafel.png" },
