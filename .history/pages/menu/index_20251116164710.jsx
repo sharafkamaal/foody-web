@@ -3,7 +3,7 @@ import Image from "next/image";
 
 // Sidebar categories as flat objects including image paths
 const sidebarCategories = [
-  { key: "platters", name: "Platters", img: "/images/categories/platters.png" },
+  { key: "platters", name: "Platters", img: "/images/categories/" },
   { key: "gyros", name: "Gyros", img: "/images/categories/gyros.png" },
   { key: "salads", name: "Salads", img: "/images/categories/Salads.png" }, // case-sensitive filename
   { key: "philly", name: "Philly", img: "/images/categories/sandwiches.png" },
@@ -28,7 +28,7 @@ const menuItems = {
       price: "$8.99",
       desc:
         "Delicious meal of ground lamb marinated with finest herbs and spices grilled to perfection served over our signature aromatic basmati rice, salad.",
-      img: "/images/platters/Lamb-over-rice.png",
+      img: "/images/platters/lamb-over-rice.png",
     },
     {
       id: 3,

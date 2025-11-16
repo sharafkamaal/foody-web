@@ -28,7 +28,7 @@ const menuItems = {
       price: "$8.99",
       desc:
         "Delicious meal of ground lamb marinated with finest herbs and spices grilled to perfection served over our signature aromatic basmati rice, salad.",
-      img: "/images/platters/Lamb-over-rice.png",
+      img: "/images/platters/amb-over-rice.png",
     },
     {
       id: 3,

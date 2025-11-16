@@ -1,49 +1,61 @@
 import { useState } from "react";
 import Image from "next/image";
 
-// Sidebar categories as flat objects including image paths
-const sidebarCategories = [
-  { key: "platters", name: "Platters", img: "/images/categories/platters.png" },
-  { key: "gyros", name: "Gyros", img: "/images/categories/gyros.png" },
-  { key: "salads", name: "Salads", img: "/images/categories/Salads.png" }, // case-sensitive filename
-  { key: "philly", name: "Philly", img: "/images/categories/sandwiches.png" },
-  { key: "extras", name: "Extras", img: "/images/categories/extras.png" },
-  { key: "drinks", name: "Drinks", img: "/images/categories/drinks.png" },
-];
+const categoryImages = {
+  platters: { jpg: "public/images/categories/platters.png", png: "public/images/categories/platters.png" },
+  gyros: { jpg: "/images/categories/gyros.png", png: "/images/categories/gyros.png" },
+  salads: { jpg: "/images/categories/Salads.png", png: "/images/categories/Salads.png" },
+  philly: { jpg: "/images/categories/sandwiches.png", png: "/images/categories/sandwiches.png" },
+  extras: { jpg: "/images/categories/extras.png", png: "/images/categories/extras.png" },
+  drinks: { jpg: "/images/categories/drinks.png", png: "/images/categories/drinks.png" },
+};
 
-// Original menuItems grouped by category remain unchanged
+// Function to pick the existing image type
+function getCategoryImage(category, type = "jpg") {
+  const imageObj = categoryImages[category];
+  if (!imageObj) return "/images/categories/default.png"; // fallback
+  return imageObj[type] || imageObj.jpg; // pick jpg if type not available
+}
+
+// Usage in JSX
+import Image from "next/image";
+
+<Image
+  src={getCategoryImage("platters", "png")} // specify jpg or png
+  alt="Platters"
+  width={200}
+  height={200}
+/>
+
+
 const menuItems = {
   platters: [
     {
       id: 1,
       name: "Chicken Over Rice",
       price: "$8.99",
-      desc:
-        "A delicious meal of juicy chicken marinated with finest herbs and spices grilled to perfection served over our signature aromatic extra-long grain basmati rice, salad.",
+      desc: 'A delicious meal of juicy chicken marinated with finest herbs and spices grilled to perfection served over our signature aromatic extra-long grain basmati rice, salad.',
       img: "/images/platters/chicken-over-rice.png",
     },
     {
       id: 2,
       name: "Lamb Over Rice",
       price: "$8.99",
-      desc:
-        "Delicious meal of ground lamb marinated with finest herbs and spices grilled to perfection served over our signature aromatic basmati rice, salad.",
-      img: "/images/platters/Lamb-over-rice.png",
+      desc: 'Delicious meal of ground lamb marinated with finest herbs and spices grilled to perfection served over our signature aromatic basmati rice, salad.',
+      img: "/images/platters/lamb-over-rice.png",
     },
     {
       id: 3,
       name: "Chicken & Lamb Mix Over Rice",
       price: "$8.99",
-      desc:
-        "Delicious meal of juicy chicken and ground lamb marinated, grilled to perfection and served over our signature aromatic basmati rice and salad.",
+      desc: 'Delicious meal of juicy chicken and ground lamb marinated, grilled to perfection and served over our signature aromatic basmati rice and salad.',
       img: "/images/platters/chicken-lamb-mix-over-rice.png",
     },
     {
       id: 4,
       name: "Falafel Over Rice",
       price: "$6.99",
-      desc:
-        "Delicious meal of crispy falafel patties marinated with finest herbs and spices, grilled to perfection and served over our signature aromatic basmati rice and salad.",
+      desc: 'Delicious meal of crispy falafel patties marinated with finest herbs and spices, grilled to perfection and served over our signature aromatic basmati rice and salad.',
       img: "/images/platters/falafel-over-rice.png",
     },
   ],
@@ -52,24 +64,21 @@ const menuItems = {
       id: 5,
       name: "Chicken Gyro",
       price: "$7.99",
-      desc:
-        'Juicy chicken marinated with the finest herbs and spices, grilled to perfection and served over 8" pita with salad and white sauce.',
+      desc: 'Juicy chicken marinated with the finest herbs and spices, grilled to perfection and served over 8" pita with salad and white sauce.',
       img: "/images/chicken-gyro.jpg",
     },
     {
       id: 6,
       name: "Lamb Gyro",
       price: "$7.99",
-      desc:
-        'Ground lamb marinated with the finest herbs and spices, grilled to perfection, over 8" pita with salad and white sauce.',
+      desc: 'Ground lamb marinated with the finest herbs and spices, grilled to perfection, over 8" pita with salad and white sauce.',
       img: "/images/lamb-gyro.jpg",
     },
     {
       id: 7,
       name: "Chicken & Lamb Mix Gyro",
       price: "$7.99",
-      desc:
-        'Juicy chicken and ground lamb marinated with the finest herbs and spices, grilled to perfection over 8" pita with salad and white sauce.',
+      desc: 'Juicy chicken and ground lamb marinated with the finest herbs and spices, grilled to perfection over 8" pita with salad and white sauce.',
       img: "/images/chicken-lamb-mix-gyro.jpg",
     },
     {
@@ -85,31 +94,28 @@ const menuItems = {
       id: 9,
       name: "Chicken Salad",
       price: "$8.99",
-      desc:
-        "Juicy chicken marinated with finest herbs and spices grilled to perfection served over fresh salad greens with flavorful dressing.",
+      desc: 'Juicy chicken marinated with finest herbs and spices grilled to perfection served over fresh salad greens with flavorful dressing.',
       img: "/images/chicken-salad.jpg",
     },
     {
       id: 10,
       name: "Lamb Salad",
       price: "$8.99",
-      desc:
-        "Ground lamb marinated with finest herbs and spices grilled to perfection served over fresh salad greens with flavorful dressing.",
+      desc: 'Ground lamb marinated with finest herbs and spices grilled to perfection served over fresh salad greens with flavorful dressing.',
       img: "/images/lamb-salad.jpg",
     },
     {
       id: 11,
       name: "Chicken & Lamb Mix Salad",
       price: "$8.99",
-      desc:
-        "Juicy chicken and Ground lamb marinated, grilled to perfection served over fresh salad greens with flavorful dressing.",
+      desc: 'Juicy chicken and Ground lamb marinated, grilled to perfection served over fresh salad greens with flavorful dressing.',
       img: "/images/chicken-lamb-mix-salad.jpg",
     },
     {
       id: 12,
       name: "Falafel Over Salad",
       price: "$6.99",
-      desc: "Fresh crispy falafel served over fresh salad greens with flavorful dressing.",
+      desc: 'Fresh crispy falafel served over fresh salad greens with flavorful dressing.',
       img: "/images/falafel-over-salad.jpg",
     },
   ],
@@ -118,43 +124,33 @@ const menuItems = {
       id: 13,
       name: "Philly Cheese Steak",
       price: "$6.99",
-      desc:
-        "Classic Philly sandwich with seasoned beef marinated with herbs and spices, grilled with onion and pepper to perfection, melted Cheese, lettuce, tomatoes and cucumber in a toasted 8\" Philly bread with dressing.",
+      desc: 'Classic Philly sandwich with seasoned beef marinated with herbs and spices, grilled with onion and pepper to perfection, melted Cheese, lettuce, tomatoes and cucumber in a toasted 8" Philly bread with dressing.',
       img: "/images/philly-cheese-steak.jpg",
     },
     {
       id: 14,
       name: "Chicken Philly",
       price: "$6.99",
-      desc:
-        "Juicy chicken marinated with herbs and spices, grilled with onion and pepper to perfection, lettuce, tomatoes and cucumber in a toasted 8\" Philly bread with dressing.",
+      desc: 'Juicy chicken marinated with herbs and spices, grilled with onion and pepper to perfection, lettuce, tomatoes and cucumber in a toasted 8" Philly bread with dressing.',
       img: "/images/chicken-philly.jpg",
     },
     {
       id: 15,
       name: "Lamb Philly",
       price: "$6.99",
-      desc:
-        "Ground lamb marinated with herbs and spices, grilled with onion and pepper to perfection, lettuce, tomatoes and cucumber in toasted 8\" Philly bread with dressing.",
+      desc: 'Ground lamb marinated with herbs and spices, grilled with onion and pepper to perfection, lettuce, tomatoes and cucumber in toasted 8" Philly bread with dressing.',
       img: "/images/lamb-philly.jpg",
     },
     {
       id: 16,
       name: "Chicken & Lamb Mix Philly",
       price: "$6.99",
-      desc:
-        "Juicy chicken and ground lamb marinated, grilled with onion and pepper to perfection, lettuce, tomatoes and cucumber in a toasted 8\" Philly bread with dressing.",
+      desc: 'Juicy chicken and ground lamb marinated, grilled with onion and pepper to perfection, lettuce, tomatoes and cucumber in a toasted 8" Philly bread with dressing.',
       img: "/images/chicken-lamb-mix-philly.jpg",
     },
   ],
   extras: [
-    {
-      id: 17,
-      name: "Meat",
-      price: "$3",
-      desc: "Extra portion of your choice of meat",
-      img: "/images/meat.jpg",
-    },
+    { id: 17, name: "Meat", price: "$3", desc: "Extra portion of your choice of meat", img: "/images/meat.jpg" },
     { id: 18, name: "Rice", price: "$2", desc: "Extra aromatic basmati rice", img: "/images/rice.jpg" },
     { id: 19, name: "Pita", price: "$1 each", desc: 'Fresh 8" pita bread', img: "/images/pita.jpg" },
     { id: 20, name: "Falafel", price: "$1 each", desc: "Crispy falafel patty", img: "/images/falafel.jpg" },
@@ -168,15 +164,27 @@ const menuItems = {
   ],
 };
 
+const categories = [
+  { key: "platters", name: "Platters" },
+  { key: "gyros", name: "Gyros" },
+  { key: "salads", name: "Salads" },
+  { key: "philly", name: "Philly" },
+  { key: "extras", name: "Extras" },
+  { key: "drinks", name: "Drinks" },
+];
+
 export default function Menu() {
   const [active, setActive] = useState("platters");
 
   return (
     <section className="py-16 sm:py-20 lg:py-24 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+
         {/* Menu Title */}
         <div className="text-center mb-10 sm:mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#0a1522] mb-4">Our Menu</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#0a1522] mb-4">
+            Our Menu
+          </h2>
           <p className="text-gray-600 text-sm sm:text-base max-w-3xl mx-auto">
             All dishes are made with aromatic extra-long grain basmati rice and served with our signature Royal White Sauce and spicy Red Sauce
           </p>
@@ -184,41 +192,43 @@ export default function Menu() {
 
         {/* Sidebar + Content Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-10">
+          
           {/* LEFT SIDEBAR - Category Menu */}
           <div className="lg:col-span-1">
             <div className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden sticky top-24">
               <div className="p-4">
-                {sidebarCategories.map((category) => (
+                {categories.map((category) => (
                   <button
                     key={category.key}
                     onClick={() => setActive(category.key)}
                     className={`w-full flex items-center gap-4 p-3 mb-2 rounded-lg transition-all duration-300 relative ${
-                      active === category.key ? "bg-gray-50" : "hover:bg-gray-50"
+                      active === category.key
+                        ? "bg-gray-50"
+                        : "hover:bg-gray-50"
                     }`}
                   >
                     {/* Red Active Indicator */}
                     {active === category.key && (
                       <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#ea1228] rounded-r-full"></div>
                     )}
-
+                    
                     {/* Category Image */}
                     <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 bg-gray-100">
                       <Image
-                        src={category.img}
+                        src={getCategoryImage(category.key)}
                         alt={category.name}
                         width={64}
                         height={64}
                         className="w-full h-full object-cover"
-                        priority
                       />
                     </div>
-
+                    
                     {/* Category Name */}
-                    <span
-                      className={`text-left font-semibold text-base ${
-                        active === category.key ? "text-[#ea1228]" : "text-gray-700"
-                      }`}
-                    >
+                    <span className={`text-left font-semibold text-base ${
+                      active === category.key
+                        ? "text-[#ea1228]"
+                        : "text-gray-700"
+                    }`}>
                       {category.name}
                     </span>
                   </button>
@@ -231,13 +241,13 @@ export default function Menu() {
           <div className="lg:col-span-3">
             <div className="bg-gray-50 rounded-xl p-6 sm:p-8 lg:p-10 shadow-lg">
               <h3 className="text-[#ea1228] text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 uppercase tracking-wide border-b-2 border-[#ea1228] pb-4">
-                {sidebarCategories.find((c) => c.key === active)?.name}
+                {categories.find(c => c.key === active)?.name}
               </h3>
 
               <div className="space-y-6">
                 {menuItems[active]?.map((item) => (
-                  <div
-                    key={item.id}
+                  <div 
+                    key={item.id} 
                     className="bg-white rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 border border-gray-200"
                   >
                     <div className="flex flex-col sm:flex-row gap-6">
@@ -249,19 +259,24 @@ export default function Menu() {
                           width={192}
                           height={192}
                           className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
-                          priority
                         />
                       </div>
 
                       {/* Product Details */}
                       <div className="flex-1 p-5 sm:p-6 flex flex-col justify-between">
                         <div>
-                          <h4 className="text-[#0a1522] font-bold text-lg sm:text-xl mb-2">{item.name}</h4>
-                          <p className="text-gray-600 text-sm sm:text-base leading-relaxed">{item.desc}</p>
+                          <h4 className="text-[#0a1522] font-bold text-lg sm:text-xl mb-2">
+                            {item.name}
+                          </h4>
+                          <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+                            {item.desc}
+                          </p>
                         </div>
-
+                        
                         <div className="flex justify-between items-center mt-4 pt-4 border-t border-gray-200">
-                          <span className="text-[#ea1228] font-bold text-2xl">{item.price}</span>
+                          <span className="text-[#ea1228] font-bold text-2xl">
+                            {item.price}
+                          </span>
                           <button className="bg-[#ea1228] text-white px-6 py-2.5 rounded-lg text-sm font-semibold hover:bg-[#c11123] transition-all duration-300 shadow-md hover:shadow-lg">
                             Add to Order
                           </button>
@@ -288,3 +303,5 @@ export default function Menu() {
     </section>
   );
 }
+
+

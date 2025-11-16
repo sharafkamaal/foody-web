@@ -1,17 +1,21 @@
 import { useState } from "react";
 import Image from "next/image";
 
-// Sidebar categories as flat objects including image paths
-const sidebarCategories = [
-  { key: "platters", name: "Platters", img: "/images/categories/platters.png" },
-  { key: "gyros", name: "Gyros", img: "/images/categories/gyros.png" },
-  { key: "salads", name: "Salads", img: "/images/categories/Salads.png" }, // case-sensitive filename
-  { key: "philly", name: "Philly", img: "/images/categories/sandwiches.png" },
-  { key: "extras", name: "Extras", img: "/images/categories/extras.png" },
-  { key: "drinks", name: "Drinks", img: "/images/categories/drinks.png" },
-];
+// Consistent category image mapping (matching your files exactly)
+const categoryImages = {
+  platters: "/images/categories/platters.png",
+  gyros: "/images/categories/gyros.png",
+  salads: "/images/categories/Salads.png",  // Case sensitive
+  philly: "/images/categories/sandwiches.png",
+  extras: "/images/categories/extras.png",
+  drinks: "/images/categories/drinks.png",
+};
 
-// Original menuItems grouped by category remain unchanged
+// Returns category image path or fallback
+function getCategoryImage(category) {
+  return categoryImages[category] || "/images/categories/default.png";
+}
+
 const menuItems = {
   platters: [
     {
@@ -28,7 +32,7 @@ const menuItems = {
       price: "$8.99",
       desc:
         "Delicious meal of ground lamb marinated with finest herbs and spices grilled to perfection served over our signature aromatic basmati rice, salad.",
-      img: "/images/platters/Lamb-over-rice.png",
+      img: "/images/platters/lamb-over-rice.png",
     },
     {
       id: 3,
@@ -168,6 +172,15 @@ const menuItems = {
   ],
 };
 
+const categories = [
+  { key: "platters", name: "Platters" },
+  { key: "gyros", name: "Gyros" },
+  { key: "salads", name: "Salads" },
+  { key: "philly", name: "Philly" },
+  { key: "extras", name: "Extras" },
+  { key: "drinks", name: "Drinks" },
+];
+
 export default function Menu() {
   const [active, setActive] = useState("platters");
 
@@ -188,7 +201,7 @@ export default function Menu() {
           <div className="lg:col-span-1">
             <div className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden sticky top-24">
               <div className="p-4">
-                {sidebarCategories.map((category) => (
+                {categories.map((category) => (
                   <button
                     key={category.key}
                     onClick={() => setActive(category.key)}
@@ -204,7 +217,7 @@ export default function Menu() {
                     {/* Category Image */}
                     <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 bg-gray-100">
                       <Image
-                        src={category.img}
+                        src={getCategoryImage(category.key)}
                         alt={category.name}
                         width={64}
                         height={64}
@@ -231,7 +244,7 @@ export default function Menu() {
           <div className="lg:col-span-3">
             <div className="bg-gray-50 rounded-xl p-6 sm:p-8 lg:p-10 shadow-lg">
               <h3 className="text-[#ea1228] text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 uppercase tracking-wide border-b-2 border-[#ea1228] pb-4">
-                {sidebarCategories.find((c) => c.key === active)?.name}
+                {categories.find((c) => c.key === active)?.name}
               </h3>
 
               <div className="space-y-6">

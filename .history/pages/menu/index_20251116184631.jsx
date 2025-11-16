@@ -20,7 +20,7 @@ const menuItems = {
       price: "$8.99",
       desc:
         "A delicious meal of juicy chicken marinated with finest herbs and spices grilled to perfection served over our signature aromatic extra-long grain basmati rice, salad.",
-      img: "/images/platters/chicken-over-rice.png",
+      img: "/images/platters/chickens-over-rice.png",
     },
     {
       id: 2,
