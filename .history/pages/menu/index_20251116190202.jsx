@@ -164,7 +164,7 @@ const menuItems = {
   ],
   drinks: [
     { id: 24, name: "Soda 330ml can", price: "$1", desc: "Refreshing soda", img: "/images/drinks/soda.png" },
-    { id: 25, name: "Water 500ml bottle", price: "$1", desc: "Pure bottled water", img: "/images/drinks/water.png" },
+    { id: 25, name: "Water 500ml bottle", price: "$1", desc: "Pure bottled water", img: "/images/drinks/water.jpg" },
   ],
 };
 

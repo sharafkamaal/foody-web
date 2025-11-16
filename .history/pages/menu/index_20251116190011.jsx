@@ -156,15 +156,15 @@ const menuItems = {
       img: "/images/extras/meat.jpg",
     },
     { id: 18, name: "Rice", price: "$2", desc: "Extra aromatic basmati rice", img: "/images/extras/rice.png" },
-    { id: 19, name: "Pita", price: "$1 each", desc: 'Fresh 8" pita bread', img: "/images/extras/pita.png" },
-    { id: 20, name: "Falafel", price: "$1 each", desc: "Crispy falafel patty", img: "/images/extras/falafel.png" },
-    { id: 21, name: "Cheese", price: "$1", desc: "Melted cheese", img: "/images/extras/cheese.png" },
-    { id: 22, name: "White Sauce", price: "$1", desc: "Signature Royal White Sauce", img: "/images/extras/white-sauce.png" },
-    { id: 23, name: "Red Spicy Sauce", price: "50¢", desc: "Spicy Red Sauce", img: "/images/extras/red-spicy-sauce.png" },
+    { id: 19, name: "Pita", price: "$1 each", desc: 'Fresh 8" pita bread', img: "/images/extras/pita.jpg" },
+    { id: 20, name: "Falafel", price: "$1 each", desc: "Crispy falafel patty", img: "/images/falafel.jpg" },
+    { id: 21, name: "Cheese", price: "$1", desc: "Melted cheese", img: "/images/cheese.jpg" },
+    { id: 22, name: "White Sauce", price: "$1", desc: "Signature Royal White Sauce", img: "/images/white-sauce.jpg" },
+    { id: 23, name: "Red Spicy Sauce", price: "50¢", desc: "Spicy Red Sauce", img: "/images/red-sauce.jpg" },
   ],
   drinks: [
-    { id: 24, name: "Soda 330ml can", price: "$1", desc: "Refreshing soda", img: "/images/drinks/soda.png" },
-    { id: 25, name: "Water 500ml bottle", price: "$1", desc: "Pure bottled water", img: "/images/drinks/water.png" },
+    { id: 24, name: "Soda 330ml can", price: "$1", desc: "Refreshing soda", img: "/images/soda.jpg" },
+    { id: 25, name: "Water 500ml bottle", price: "$1", desc: "Pure bottled water", img: "/images/water.jpg" },
   ],
 };
 

@@ -163,8 +163,8 @@ const menuItems = {
     { id: 23, name: "Red Spicy Sauce", price: "50¢", desc: "Spicy Red Sauce", img: "/images/extras/red-spicy-sauce.png" },
   ],
   drinks: [
-    { id: 24, name: "Soda 330ml can", price: "$1", desc: "Refreshing soda", img: "/images/drinks/soda.png" },
-    { id: 25, name: "Water 500ml bottle", price: "$1", desc: "Pure bottled water", img: "/images/drinks/water.png" },
+    { id: 24, name: "Soda 330ml can", price: "$1", desc: "Refreshing soda", img: "/images/drinks/soda.jg" },
+    { id: 25, name: "Water 500ml bottle", price: "$1", desc: "Pure bottled water", img: "/images/water.jpg" },
   ],
 };
 
