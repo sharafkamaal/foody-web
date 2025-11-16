@@ -70,7 +70,7 @@ const menuItems = {
       price: "$7.99",
       desc:
         'Juicy chicken and ground lamb marinated with the finest herbs and spices, grilled to perfection over 8" pita with salad and white sauce.',
-      img: "/images/gyros/chicken-lamb-mix-gyro.png",
+      img: "/images/gyros/chicken-lamb-mix-gyro.g",
     },
     {
       id: 8,

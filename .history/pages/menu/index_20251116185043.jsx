@@ -54,7 +54,7 @@ const menuItems = {
       price: "$7.99",
       desc:
         'Juicy chicken marinated with the finest herbs and spices, grilled to perfection and served over 8" pita with salad and white sauce.',
-      img: "/images/gyros/chicken-gyro.png",
+      img: "/images/chicken-gyro.jpg",
     },
     {
       id: 6,
@@ -62,7 +62,7 @@ const menuItems = {
       price: "$7.99",
       desc:
         'Ground lamb marinated with the finest herbs and spices, grilled to perfection, over 8" pita with salad and white sauce.',
-      img: "/images/gyros/lamb-gyro.png",
+      img: "/images/lamb-gyro.jpg",
     },
     {
       id: 7,
@@ -70,7 +70,7 @@ const menuItems = {
       price: "$7.99",
       desc:
         'Juicy chicken and ground lamb marinated with the finest herbs and spices, grilled to perfection over 8" pita with salad and white sauce.',
-      img: "/images/gyros/chicken-lamb-mix-gyro.png",
+      img: "/images/chicken-lamb-mix-gyro.jpg",
     },
     {
       id: 8,
@@ -263,7 +263,7 @@ export default function Menu() {
                         <div className="flex justify-between items-center mt-4 pt-4 border-t border-gray-200">
                           <span className="text-[#ea1228] font-bold text-2xl">{item.price}</span>
                           <button className="bg-[#ea1228] text-white px-6 py-2.5 rounded-lg text-sm font-semibold hover:bg-[#c11123] transition-all duration-300 shadow-md hover:shadow-lg">
-                            Add to Order
+                            Add to Ordersss
                           </button>
                         </div>
                       </div>
